@@ -1,0 +1,32 @@
+.seccion {
+    margin-top: calc($separacion / 2);
+    margin-bottom: calc($separacion / 2);
+}
+.contenido-centrado {
+    max-width: 80rem;
+}
+
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.informacion-meta{
+    span{
+        color: $amarillo;
+    }
+}
+
+.img-small{
+    width: 20rem;
+}
+
+.w-100{
+width: 100%;
+}
+
+.espacio-footer{
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

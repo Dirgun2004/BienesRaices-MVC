@@ -1,0 +1,78 @@
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet{
+        align-items: flex-end;
+    }
+
+    .dark-mode-boton{
+        width: 3rem;
+        margin: 3rem 0 2rem 0;
+        filter: invert(100%);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include tablet{
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+.barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.navegacion{
+    display: none;
+
+    a{
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block;
+        text-align: center;
+        &:hover{
+            color: $verde;
+        }
+    }
+
+
+    @include tablet{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.mostrar{
+    display: flex;
+    flex-direction: column;
+
+    @include tablet{
+        flex-direction: row;
+    }
+}
+
+/* Menu de Hamburguesa o Responsive */
+
+.mobile-menu{
+    @include tablet{
+        display: none;
+    }
+
+    img{
+        width: 5rem;
+    }
+}

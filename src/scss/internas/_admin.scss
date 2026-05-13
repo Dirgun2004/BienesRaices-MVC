@@ -1,0 +1,45 @@
+.alerta{
+    text-transform: uppercase;
+    color: white;
+    padding: .5rem;
+    margin: 1rem;
+    text-align: center;
+    &.error{
+        background-color: rgb(220, 55, 55);
+    }
+    &.success{
+        background-color: rgb(15, 147, 15);
+    }
+}
+
+table{
+
+&.propiedades{
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead{
+        background-color: $verde;
+
+        th{
+            color: $blanco;
+            padding: 1rem;
+        }
+
+        td{
+            align-items: center;
+        }
+    }
+
+    .imagen-tabla{
+        width: 10rem;
+    }
+}
+
+&.vendedores{
+    thead{
+        background-color: $azul;
+    }
+}
+}
