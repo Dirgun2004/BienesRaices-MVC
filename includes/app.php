@@ -9,5 +9,4 @@ $dotenv->safeLoad();
 require 'funciones.php';
 require 'config/database.php';
 
-$db = conectarDB();
 activeRecords::setDB($db);
