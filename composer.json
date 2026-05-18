@@ -9,6 +9,8 @@
     ],
     "require": {
         "intervention/image": "*",
+        "ext-mysqli": "*",
+        "ext-pdo_mysql": "*",
         "phpmailer/phpmailer": "^7.0",
         "vlucas/phpdotenv": "^5.6"
     },
