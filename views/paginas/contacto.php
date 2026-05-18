@@ -6,9 +6,9 @@
         <?php } ?>
         
         <picture>
-            <source srcset="/public/build/img/destacada3.webp" type="img/webp">
-            <source srcset="/public/build/img/destacada3.jpg" type="img/jpeg">
-            <img src="/public/build/img/destacada3.jpg" alt="Imagen formulario de contacto">
+            <source srcset="build/img/destacada3.webp" type="img/webp">
+            <source srcset="build/img/destacada3.jpg" type="img/jpeg">
+            <img src="build/img/destacada3.jpg" alt="Imagen formulario de contacto">
         </picture>
 
         <form class="formulario" method="post">
