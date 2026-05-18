@@ -62,6 +62,6 @@ if(!isset($inicio)){
         <p class="copyright">Todos los derechos reservados <?php echo $fecha; ?> &copy;</p>
     </footer>
 </div>
-    <script src="/public/build/js/bundle.min.js"></script>
+    <script src="build/js/bundle.min.js"></script>
 </body>
 </html>
