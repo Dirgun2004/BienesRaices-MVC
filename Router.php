@@ -13,40 +13,25 @@ class Router{
         $this->rutasPost[$url] = $fn;
     }
 
-    public function comprobarRutas(){
-        session_start();
-        $auth = $_SESSION['login'] ?? NULL;
-        $urLogin = '/login';
-        $rutasProtegidas = [
-            '/admin',
-            '/propiedades/actualizar',
-            '/propiedades/crear',
-            '/propiedades/eliminar',
-            '/vendedores/crear',
-            '/vendedores/eliminar',
-            '/vendedores/actualizar'
-            ];
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        $metodo = $_SERVER['REQUEST_METHOD'];
+    public function comprobarRutas()
+    {
 
-        if($metodo == 'GET'){
-            $fn = $this->rutasGet[$urlActual] ?? NULL;
-            }else{
-            $fn = $this->rutasPost[$urlActual] ?? NULL;
+        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if ($method === 'GET') {
+            $fn = $this->getRoutes[$currentUrl] ?? null;
+        } else {
+            $fn = $this->postRoutes[$currentUrl] ?? null;
         }
 
-        if(in_array($urlActual, $rutasProtegidas) && !$auth){
-            header('Location: /public');
-        }elseif($urLogin == $urlActual && $auth){
-            header('Location: /public/admin');            
-        }
 
-        if($fn){
-            call_user_func($fn, $this);
-        }else{
-            header('Location: /public/error404');
+        if ( $fn ) {
+            // Call user fn va a llamar una función cuando no sabemos cual sera
+            call_user_func($fn, $this); // This es para pasar argumentos
+        } else {
+            echo "Página No Encontrada o Ruta no válida";
         }
-
     }
 
     public function render($view, $datos = []) {
